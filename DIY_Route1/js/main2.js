@@ -1,14 +1,11 @@
-(function(){
-	
-	var main2 = {};
+(function () {
 
+	main2 = {};
 	main2.init = function () {
-		alert('main2');
+		alert('请求成功我是main2');
 	}
-
-	if(!window.lingxe){
+	if (!window.lingxe) {
 		window.lingxe = {};
 	}
-
-	lingxe.main2 = main2;
+	window.lingxe.main2 = main2;
 })()

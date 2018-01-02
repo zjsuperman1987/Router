@@ -7,7 +7,7 @@
 			  	if ($(this).attr('module')) {
 	            	showModule($(this).attr('module'));
 	        	}
-			  	// $('.ta_calendar').remove();
+			  	$('.ta_calendar').remove();
 			});
 	        
 	    });
@@ -17,7 +17,7 @@
 		var jqxhr = $.ajax("page/" + module +".html")
 			.done(function(data) {
 			  	$('#mainContent').empty().append($(data));
-				// $('#mainContent').find('.content-wrap').css("height", $('#mainContent').height());
+				$('#mainContent').find('.content-wrap').css("height", $('#mainContent').height());
 			  	lingxe[module].init();
 		  	})
 		  	.fail(function() {
