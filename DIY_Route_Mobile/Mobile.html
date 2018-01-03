@@ -3,7 +3,6 @@
 <head>
 	<title>Mobile_index</title>
 </head>
-<body>
 
 	<style type="text/css">
 		.first_level > ul {
@@ -35,10 +34,26 @@
 			height: 100%;
 			font-style: normal;
 		}
+		.test-route {
+			margin: 0 auto;
+			margin-top: 50px;
+			width: 300px;
+			height: 300px;
+			line-height: 300px;
+			background: gold;
+			text-align: center;
+		}
 	</style>
 
+<body>
 
-	<div class="first_level">
+	
+
+	<!-- <div class="test-route">
+		<button>点我测试</button>
+	</div> -->
+
+<!-- 	<div class="first_level">
 		<ul>
 			<li>
 				<div class="first_level_left">
@@ -58,6 +73,47 @@
 				</div>
 			</li>
 		</ul>
-	</div>
+	</div> -->
+
+	<div id="content"></div>
+
+
+
+	<script src="Mobile-route.js"></script>
+	<script type="text/javascript">
+		// debugger;
+		// Router.map('/index', function (transition) {
+		// 	Router.asyncFun('route/index.js', transition)
+		// })
+
+		// Router.map('/not-mainForce', function (transition) {
+		// 	Router.asyncFun('route/first-level.js', transition);
+		// })
+
+		// Router.init();
+		debugger;
+		Router.map('/index', function(transition) {
+			Router.asyncFun('route/index.js', transition)
+		})
+		Router.map('/first-level', function (transition) {
+			Router.asyncFun('route/first-level.js', transition);
+		})
+		Router.map('/second-level', function (transition) {
+			Router.asyncFun('route/second-level.js', transition)
+		})
+		Router.init();
+
+			// btn.onclick = function () {
+			// 		location.hash = '/first-level'
+			// }
+		// window.onload = function () {
+		// 	var btn = document.querySelector('button');
+		// 	console.log(btn + '===');
+		// 	btn.addEventListener('click', function () {
+		// 		alert(1);
+		// 		location.hash = '/first-level'
+		// 	})
+		// }
+	</script>
 </body>
 </html>

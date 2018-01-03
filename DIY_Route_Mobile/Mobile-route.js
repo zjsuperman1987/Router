@@ -38,12 +38,12 @@
 			});
 			// 路由切换
 			window.addEventListener('hashchange', function () {
-				self.urlchange();
+				self.urlChange();
 			});
 			// 异步引入 js 通过回调传递参数
 			window.SPA_RESOLVE_INIT = null;
 		},
-		refresh: function () {
+		refresh: function (currentHash) {
 			var self = this;
 			if (self.beforeFun) {
 				self.beforeFun ({
@@ -60,13 +60,13 @@
 			}
 		},
 		// 路由处理
-		urlchange: function () {
+		urlChange: function () {
 			var currentHash = util.getParamsUrl();
 			if (this.routers[currentHash.path]) {
 				this.refresh(currentHash)
 			}else {
 				// 不存在的地址重定向到首页
-				location.hash = '/Mobile.html'
+				location.hash = '/index'
 			}
 		},
 		// 单层路由注册
@@ -102,7 +102,7 @@
 				self.afterFun && self.afterFun(transition);
 				self.routers[transition.path].fn(transition);
 			}else {
-				console.log('开始异步下载 js' + file);
+				console.log('开始异步下载 js ' + file);
 				var _body = document.getElementsByTagName('body')[0];
 				var scriptEle = document.createElement('script');
 				scriptEle.type = 'text/javascript';
@@ -117,7 +117,6 @@
 				}
 				_body.appendChild(scriptEle);
 			}
-
 		},
 		syncFun: function (callback, transition) {
 			this.afterFun && this.afterFun(transition);
