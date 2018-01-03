@@ -7,7 +7,7 @@ SPA_RESOLVE_INIT = function (transition) {
 	}
 	xmlhttp.onreadystatechange = function () {
 		if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-			document.body.innerHTML = xmlhttp.responseText;
+			document.getElementById('content').innerHTML = xmlhttp.responseText;
 
 			var btnValue = document.querySelectorAll('.first_level_left_describe');
 
@@ -18,11 +18,13 @@ SPA_RESOLVE_INIT = function (transition) {
 					var result = this.innerHTML;
 					location.hash = '/index'
 
-				
-					// setTimeout(function() {
-					// 	console.log(result);
-					// document.querySelector('input').value = result
-					// },100)
+
+					setTimeout(function() {
+						console.log(result);
+						document.querySelector('input').value = result
+						},100)
+					
+
 				})
 			}
 		}

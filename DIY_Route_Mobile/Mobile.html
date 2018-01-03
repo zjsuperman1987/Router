@@ -2,8 +2,7 @@
 <html>
 <head>
 	<title>Mobile_index</title>
-</head>
-
+	<script src="Mobile-route.js"></script>
 	<style type="text/css">
 		.first_level > ul {
 			list-style-type: none;
@@ -45,41 +44,13 @@
 		}
 	</style>
 
+
+</head>
+
 <body>
-
-	
-
-	<!-- <div class="test-route">
-		<button>点我测试</button>
-	</div> -->
-
-<!-- 	<div class="first_level">
-		<ul>
-			<li>
-				<div class="first_level_left">
-					<a class="first_level_left_describe" href="#/not-mainForce">非主力店业态</a>
-				</div>
-				<div class="first_level_right">
-					<i class="first_level_right_symbol"> >> </i>
-				</div>
-			</li>
-
-			<li>
-				<div class="first_level_left">
-					<a class="first_level_left_describe" href="#/mainForce">主力店业态</a>
-				</div>
-				<div class="first_level_right">
-					<i class="first_level_right_symbol"> >> </i>
-				</div>
-			</li>
-		</ul>
-	</div> -->
 
 	<div id="content"></div>
 
-
-
-	<script src="Mobile-route.js"></script>
 	<script type="text/javascript">
 		// debugger;
 		// Router.map('/index', function (transition) {
@@ -91,7 +62,6 @@
 		// })
 
 		// Router.init();
-		debugger;
 		Router.map('/index', function(transition) {
 			Router.asyncFun('route/index.js', transition)
 		})
@@ -101,6 +71,8 @@
 		Router.map('/second-level', function (transition) {
 			Router.asyncFun('route/second-level.js', transition)
 		})
+
+
 		Router.init();
 
 			// btn.onclick = function () {

@@ -7,11 +7,13 @@ SPA_RESOLVE_INIT = function (transition) {
 	input.value = '点我测试'
 	indexBox.appendChild(input);
 
-	document.body.appendChild(indexBox);
+	var content = document.getElementById("content");
+	content.innerHTML = '';
+	content.appendChild(indexBox);
+	// document.getElementById("content").appendChild(indexBox);
 
 	var btn = document.querySelector('input')
 	btn.onclick = function () {
-		debugger;
 		location.hash = '/first-level';
 	}
 }
